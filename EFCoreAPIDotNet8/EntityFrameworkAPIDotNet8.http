@@ -1,0 +1,31 @@
+﻿@EntityFrameworkAPIDotNet8_HostAddress = https://localhost:7075
+
+GET {{EntityFrameworkAPIDotNet8_HostAddress}}/api/pokemon
+
+###
+
+POST {{EntityFrameworkAPIDotNet8_HostAddress}}/api/pokemon
+Content-Type: application/json
+
+{
+  //Pokemon
+}
+
+###
+
+PUT {{EntityFrameworkAPIDotNet8_HostAddress}}/api/pokemon
+Content-Type: application/json
+
+{
+  //Pokemon
+}
+
+###
+
+DELETE {{EntityFrameworkAPIDotNet8_HostAddress}}/api/pokemon?id=0
+
+###
+
+GET {{EntityFrameworkAPIDotNet8_HostAddress}}/api/pokemon/0
+
+###

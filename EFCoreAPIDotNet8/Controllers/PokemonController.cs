@@ -56,5 +56,17 @@ namespace EntityFrameworkAPIDotNet8.Controllers
             await _context.SaveChangesAsync();
             return Ok(await _context.Pokemon.ToListAsync());
         }
+
+        [HttpDelete]
+        public async Task<ActionResult<List<Pokemon>>> DeletePokemon(int id)
+        {
+            var dbPokemon = await _context.Pokemon.FindAsync(id);
+            if (dbPokemon is null)
+                return NotFound("Pokemon not found.");
+            _context.Pokemon.Remove(dbPokemon);
+
+            await _context.SaveChangesAsync();
+            return Ok(await _context.Pokemon.ToListAsync());
+        }
     }
 }
